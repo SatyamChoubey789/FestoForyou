@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festo — College Events, Reimagined</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0d0518;
+  --card:#1a0d2e;
+  --border:rgba(157,95,245,0.2);
+  --purple:#8b5cf6;
+  --purple2:#a78bfa;
+  --text:#f3eeff;
+  --muted:rgba(243,238,255,0.6);
+  --fd:'Syne',sans-serif;
+  --fb:'DM Sans',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--fb);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 24px;
+  background:rgba(13,5,24,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+
+.logo{
+  font-family:var(--fd);
+  font-weight:800;
+  font-size:20px;
+}
+
+.logo span{color:var(--purple2)}
+
+.tag{
+  font-size:12px;
+  color:var(--purple2);
+}
+
+/* HERO */
+.wrap{
+  padding:120px 20px 60px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+.logo-img{
+  width:160px;
+  margin:auto;
+  margin-bottom:20px;
+}
+
+h1{
+  font-family:var(--fd);
+  font-size:clamp(30px,5vw,56px);
+  line-height:1.1;
+}
+
+h1 span{color:var(--purple2)}
+
+.sub{
+  margin-top:16px;
+  color:var(--muted);
+  max-width:500px;
+  margin-inline:auto;
+}
+
+/* COUNTDOWN */
+.count{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  width:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--fd);
+  font-size:24px;
+}
+
+.label{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* TICKER */
+.ticker{
+  margin-top:50px;
+  overflow:hidden;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.track{
+  display:flex;
+  width:max-content;
+  animation:scroll 20s linear infinite;
+}
+
+.item{
+  padding:12px 24px;
+  font-size:12px;
+  color:var(--muted);
+  white-space:nowrap;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* OVERVIEW */
+.section{
+  margin-top:70px;
+  text-align:left;
+}
+
+.section h2{
+  font-family:var(--fd);
+  font-size:28px;
+  margin-bottom:16px;
+}
+
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+}
+
+.card h3{
+  font-family:var(--fd);
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(min-width:768px){
+  .grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">FESTO<span>.</span></div>
+  <div class="tag">Coming Soon</div>
+</nav>
+
+<div class="wrap">
+
+  <h1>One platform for<br><span>every college event</span></h1>
+
+  <p class="sub">
+    QR entry. Instant registration. Smart payments.
+    Built for students, organizers & admins.
+  </p>
+
+  <!-- COUNTDOWN -->
+  <div class="count">
+    <div>
+      <div class="box" id="d">00</div>
+      <div class="label">Days</div>
+    </div>
+    <div>
+      <div class="box" id="h">00</div>
+      <div class="label">Hours</div>
+    </div>
+    <div>
+      <div class="box" id="m">00</div>
+      <div class="label">Mins</div>
+    </div>
+    <div>
+      <div class="box" id="s">00</div>
+      <div class="label">Secs</div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="track">
+      <div class="item">QR Entry •</div>
+      <div class="item">Instant Registration •</div>
+      <div class="item">Live Attendance •</div>
+      <div class="item">Digital Certificates •</div>
+      <div class="item">Organizer Dashboard •</div>
+
+      <!-- duplicate for smooth loop -->
+      <div class="item">QR Entry •</div>
+      <div class="item">Instant Registration •</div>
+      <div class="item">Live Attendance •</div>
+      <div class="item">Digital Certificates •</div>
+      <div class="item">Organizer Dashboard •</div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <h2>Platform Overview</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Student Experience</h3>
+        <p>
+          Discover events, register instantly, receive a QR ticket, attend seamlessly,
+          and get certificates — all in a few taps. Includes filters, history tracking,
+          and notifications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Organizer Dashboard</h3>
+        <p>
+          Create and manage events, track registrations, monitor payments,
+          scan QR codes for entry, and export reports with full control.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Admin Control</h3>
+        <p>
+          Manage organizers, monitor platform activity, track revenue,
+          and ensure data integrity across the college ecosystem.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+const launch = new Date("2026-06-15").getTime();
+
+function update(){
+  const now = new Date().getTime();
+  const diff = launch - now;
+
+  if(diff<=0)return;
+
+  document.getElementById("d").innerText = Math.floor(diff/86400000);
+  document.getElementById("h").innerText = Math.floor((diff%86400000)/3600000);
+  document.getElementById("m").innerText = Math.floor((diff%3600000)/60000);
+  document.getElementById("s").innerText = Math.floor((diff%60000)/1000);
+}
+
+setInterval(update,1000);
+update();
+</script>
+
+</body>
+</html>
